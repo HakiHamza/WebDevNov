@@ -49,3 +49,31 @@ let users = [
     }
 ]
 
+// for(variable;condition;operator){
+//     // coding here actions
+
+// }
+
+
+function getSingleUser(username) {
+    for (let i = 0; i < users.length; i++) {
+        // console.log(i)
+        //  console.log(username)
+        //document.querySelector('tbody').innerHTML+=`<tr><td>${obj.username}</td></tr>`
+        let obj = users[i];
+        if (obj.username === username) {
+            
+            console.log(`Fullname: ${obj.name}\nEmail: ${obj.email}\nAddress: ${obj.address.street}, ${obj.address.city} ${obj.address.zipcode}\n---\n`)
+            return `Fullname: ${obj.name}<br/>Email: ${obj.email}<br/>Address: ${obj.address.street}, ${obj.address.city} ${obj.address.zipcode}<br/>`
+        } else {
+            console.log('not found!')
+        }
+        //console.log(users[i]) // users[0] users[1] users[2]
+
+    }
+
+}
+
+// document.querySelector('tbody').innerHTML+=`<tr><td></td></tr>`
+
+document.getElementById('result').innerHTML = getSingleUser('Samantha')
